@@ -1,0 +1,387 @@
+/* --- RESET & GLOBAL TYPOGRAPHY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #eae7e5;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- 1. NAVBAR STYLING --- */
+.navbar {
+    background-color: #000000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+}
+
+.nav-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+/* --- 2. MAUVE TOP BANNER --- */
+.gallery-top-section {
+    background-color: #af8cb3;
+    padding: 80px 40px;
+    position: relative;
+    text-align: center;
+}
+
+.torn-paper-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: radial-gradient(circle at 50% 100%, transparent 10px, #eae7e5 11px);
+    background-size: 20px 20px;
+}
+
+.torn-paper-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: radial-gradient(circle at 50% 0%, transparent 10px, #eae7e5 11px);
+    background-size: 20px 20px;
+}
+
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    color: #4f0c18;
+}
+
+.polaroid-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.polaroid-card {
+    background-color: #ffffff;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 200px;
+}
+
+.polaroid-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.polaroid-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rot-left { transform: rotate(-5deg); }
+.rot-straight { transform: rotate(1deg); top: -8px; }
+.rot-right { transform: rotate(4deg); }
+
+.tape {
+    position: absolute;
+    top: -14px;
+    left: 35%;
+    width: 65px;
+    height: 20px;
+    background-color: rgba(226, 218, 195, 0.75);
+    transform: rotate(-3deg);
+}
+
+.intro-caption {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    font-size: 0.75rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-align: justify;
+}
+
+/* --- 3. WIDE HERO CAROUSEL & TIMED SLIDER ELEMENTS --- */
+.hero-carousel {
+    padding: 100px 20px; /* Widened top and bottom spacing */
+    display: flex;
+    justify-content: center;
+    background-color: #e9ebc1;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "slide";
+    overflow: hidden;
+}
+
+.carousel-slide {
+    grid-area: slide;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 520px; /* Crisp landscape cinematic display height */
+    object-fit: cover;
+    display: block;
+}
+
+/* Dead Center Arrow Positioning Setup */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: transform 0.2s, opacity 0.2s, background-color 0.2s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.arrow:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-left { left: 25px; }
+.arrow-right { right: 25px; }
+
+/* --- 4. LACE & PEARL STRING SECTIONS --- */
+.pearl-section {
+    background-color: #af8cb3;
+    padding: 60px 40px;
+}
+
+.lace-divider-top {
+    height: 25px;
+    background: radial-gradient(circle, #000 4px, transparent 5px), 
+                radial-gradient(circle, #000 4px, transparent 5px);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    background-color: #af8cb3;
+}
+
+.lace-divider-bottom {
+    height: 25px;
+    background: radial-gradient(circle, #000 4px, transparent 5px), 
+                radial-gradient(circle, #000 4px, transparent 5px);
+    background-size: 16px 16px;
+    background-position: 0 0, 8px 8px;
+    background-color: #eae7e5;
+}
+
+.pearl-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.mini-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mini-card { max-width: 260px; }
+
+.arch-image-wrapper {
+    width: 100%;
+    border-radius: 120px 120px 0 0;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.mini-card img { width: 100%; display: block; }
+
+.mini-caption {
+    font-size: 0.68rem;
+    margin-top: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.pearl-frame-box {
+    position: relative;
+    padding: 30px;
+}
+
+.pearl-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 10px dotted #ffffff;
+    border-radius: 60px;
+    pointer-events: none;
+}
+
+.pearl-text-content {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    padding: 20px;
+    text-align: justify;
+}
+
+.pearl-text-content p { margin-bottom: 20px; }
+
+/* --- 5. HISTORY SECTION --- */
+.history-section {
+    background-color: #eae7e5;
+    padding: 80px 40px;
+    color: #333333;
+}
+
+.history-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.history-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    margin-bottom: 45px;
+    color: #000000;
+}
+
+.history-content-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.history-text-frame {
+    background: #ffffff;
+    border: 1px solid #d4ceca;
+    padding: 45px;
+    line-height: 1.9;
+    font-size: 0.88rem;
+    text-align: justify;
+}
+
+.history-collage {
+    position: relative;
+    min-height: 480px;
+    background-image: radial-gradient(#bebebe 1.2px, transparent 1.2px);
+    background-size: 18px 18px;
+    padding: 20px;
+}
+
+.collage-item {
+    background-color: #ffffff;
+    padding: 10px 10px 30px 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    position: absolute;
+    width: 230px;
+}
+
+.collage-item img { width: 100%; display: block; }
+
+.collage-label {
+    font-size: 0.65rem;
+    margin-top: 12px;
+    font-weight: 700;
+    color: #111111;
+}
+
+.item-top { top: 0px; right: 15px; transform: rotate(4deg); }
+
+.tape-mini {
+    position: absolute;
+    top: -9px;
+    left: 42%;
+    width: 45px;
+    height: 16px;
+    background-color: rgba(226, 218, 195, 0.7);
+}
+
+.item-bottom { bottom: -10px; left: 15px; transform: rotate(-3deg); }
+
+/* --- RESPONSIVE MODIFIERS --- */
+@media (max-width: 992px) {
+    .pearl-container, .history-content-grid { grid-template-columns: 1fr; }
+    .mini-column { flex-direction: row; justify-content: center; gap: 20px; }
+    .history-collage { min-height: 380px; display: flex; justify-content: center; gap: 30px; background-image: none; }
+    .collage-item { position: relative; transform: none !important; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; }
+}
